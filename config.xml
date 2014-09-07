@@ -47,6 +47,10 @@
     <icon src="img/icons/winphone/icon.png" gap:platform="winphone" /> <!-- 57 pixels -->
     <icon src="img/icons/winphone/tileicon.png" gap:platform="winphone" gap:role="background" /> <!-- 72 pixels -->
    <!-- SPLASH SCREENS -->
+   
+   <gap:config-file platform="ios" parent="CFBundleShortVersionString">
+	<string>114</string>
+	</gap:config-file>
         
     <access origin="*" />
 </widget>
