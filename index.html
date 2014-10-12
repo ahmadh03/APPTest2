@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+﻿<!DOCTYPE html> 
 <html>
 <head>
 
@@ -19,7 +19,9 @@
 <body> 
 
 <!--<div id="loader" data-role="page" > <img src="images/button.jpg"> </div> -->
-<div data-role="page" style="background:none" id="page1">
+<div data-role="page" style="background:white" id="page1">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
+
 	<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
   <a href="#page2" ><img  src="images/enter.jpg"  alt="enter"></a>
   
@@ -39,9 +41,9 @@
     </div>
     
     
-      	<div data-role="page" id="loaderpage" > 
-        	<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
-	<div class="title_bg"> 
+      	<div data-role="page" id="loaderpage" style="background:white;border:0"> 
+      	<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
+        		<div class="title_bg"> 
     <div class="title">
 Loading ...
     </div>
@@ -53,16 +55,17 @@ Loading ...
     
     
     
-<div class="ac" data-role="page" id="page2" style="background:none">
+<div class="ac" data-role="page" id="page2" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
 	<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
 	<table id="page2Table" width="96%" style="margin:0 2% 11% 2%">
 	<tr>
-	<td> <a href="#" onClick="goload('page_v')"><img src="images/visitors.jpg"  alt="Visitors" style="width:98%;margin:1%"></a></td>
-	<td><a href="#" onClick="goload('page_el')"> <img src="images/exhibitor_list.jpg"  alt="Exhibitors List" style="width:98%;margin:1%"></a></td>
+	<td> <a href="#" onClick="goload('page_v')"><img src="images/visitors.jpg"  alt="Visitors" style="width:98%;margin:1% 1% 0 1%"></a></td>
+	<td><a href="#" onClick="goload('page_el')"> <img src="images/exhibitor_list.jpg"  alt="Exhibitors List" style="width:98%;margin:1% 1% 0 1%"></a></td>
 	</tr>
 		<tr>
-	<td> <a href="#" onClick="goload('page_ea')"><img src="images/exhibitors.jpg"  alt="Exhibitors" style="width:98%;margin:1%"></a></td>
-	<td> <a href="#" onClick="goload('page_nu')"> <img src="images/news.jpg"  alt="News" style="width:98%;margin:1%"></a></td>
+	<td> <a href="#" onClick="goload('page_ea')"><img src="images/exhibitors.jpg"  alt="Exhibitors" style="width:98%;margin:0 1% 1% 1%"></a></td>
+	<td> <a href="#" onClick="goload('page_nu')"> <img src="images/news.jpg"  alt="News" style="width:98%;margin:0 1% 1% 1%"></a></td>
 	</tr>
 
 	</table>
@@ -75,11 +78,14 @@ Loading ...
 			
 	
 	<div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page1"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
 	</div>
 </div>
 
@@ -88,7 +94,8 @@ Loading ...
 
 
 
-<div data-role="page" id="page_v" style="background:none">
+<div data-role="page" id="page_v" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
 	<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
 	<div class="title_bg"> 
     <div class="title">
@@ -97,6 +104,7 @@ Loading ...
     </div>
     <div style="clear:both"></div>
     <br>
+    <div  style="padding-bottom:9%">
     <div class="button" >
     <div class="button_text">
    <a href="#page_visitorinformation" class=""  id="menubutton"> Useful Information</a>
@@ -127,19 +135,22 @@ Loading ...
     
     </div>
     </div>
-
+</div>
 	<div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page2"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a> 
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 
-<div data-role="page" id="page_el" style="background:none">
+<div data-role="page" id="page_el" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
 	 <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
      <div class="title_bg"> 
     <div class="title">
@@ -152,25 +163,28 @@ Loading ...
     
      </table>
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page2"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a> 
+	</div></div>
 
 
 
 
-<div data-role="page" id="page_ea" style="background:none">
+<div data-role="page" id="page_ea" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
  <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
 	<div class="title_bg"> 
     <div class="title">
     Exhibitor Area
     </div>
     </div>
-    
+    <div style="padding-bottom:9%">
     <div class="button" >
     <div class="button_text">
    <a href="#page_exhibitorsinformation" class=""  id="menubutton"> Useful Information </a>
@@ -201,14 +215,17 @@ Loading ...
     
     </div>
     </div>
+    </div>
 	<div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page2"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 
@@ -216,7 +233,8 @@ Loading ...
 
 
 
-<div data-role="page" id="page_nu" style="background:none">
+<div data-role="page" id="page_nu" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
 	<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
 	<div class="title_bg"> 
     <div class="title">
@@ -224,6 +242,7 @@ Loading ...
     </div>
     </div>
     <br>
+    <div style="padding-bottom:9%">
     <div class="button" >
     <div class="button_text">
     
@@ -255,14 +274,17 @@ Loading ...
     
     </div>
     </div>
+    </div>
 	<div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page2"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 
@@ -276,7 +298,8 @@ Loading ...
 
 
 
-<div data-role="page" id="page_r" style="background:none">
+<div data-role="page" id="page_r" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
   <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
   <div class="title_bg"> 
     <div class="title">
@@ -301,7 +324,7 @@ Loading ...
     <input type="text" style="width:100%" name="address" id="address" value=""   />
   </div>
   <div>
- 	<a href="#" onClick="addvalue()"><img src="images/registerbutton.png"></a>
+ 	<a href="#" onClick="addvalue()"><img src="images/register.png"></a>
     
     </div>
     
@@ -311,7 +334,8 @@ Loading ...
     
   
   
-<div data-role="page" id="page_cu" style="background:none">
+<div data-role="page" id="page_cu" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
      <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
      <div class="title_bg"> 
     <div class="title">
@@ -324,20 +348,23 @@ Loading ...
     
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"  href="#page_v"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-  </div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div>  </div>
   
   
   
   
   
   
-<div data-role="page" id="page_cp" style="background:none">
+<div data-role="page" id="page_cp" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
      <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
      <div class="title_bg"> 
     <div class="title">
@@ -349,16 +376,19 @@ Loading ...
    <p>Coming Soon</p>
 	</div>
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page_v"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-  </div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div>  </div>
 
 
-<div data-role="page" id="page_mp" style="background:none">
+<div data-role="page" id="page_mp" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -369,20 +399,23 @@ Loading ...
    	</div>
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"   href="#page_nu"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 
 
 
 
-<div data-role="page" id="page_update" style="background:none">
+<div data-role="page" id="page_update" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -394,18 +427,21 @@ Loading ...
    	</div>
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton" href="#page_nu"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 
 
-<div data-role="page" id="page_n" style="background:none">
+<div data-role="page" id="page_n" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -418,15 +454,18 @@ Loading ...
    	</div>
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"  href="#page_nu"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
-<div data-role="page" id="page_visitorinformation" style="background:none">
+<div data-role="page" id="page_visitorinformation" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -439,16 +478,19 @@ Loading ...
    	</div>
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"    href="#page_v"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
-<div data-role="page" id="page_exhibitorsinformation" style="background:none">
+<div data-role="page" id="page_exhibitorsinformation" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -461,15 +503,18 @@ Loading ...
    	</div>
 
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"  target="_blank"  href="#"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 <div data-role="page" id="page_pr" style="background:white">
+<div data-role="header" style="background:white;border:0"><h1 > </h1></div>
    <a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>
    <div class="title_bg"> 
     <div class="title">
@@ -479,13 +524,15 @@ Loading ...
 
     <div class="text_content" id="pr_content" style="padding:0 2% 11% 2%" ></div>
 <div class="footer">
-		<a id="twitterButton"  target="_blank"  href="https://twitter.com/FP_Show"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:8%"> Twitter</a> 
+	<a id="backButton"  href="#page_nu"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> 
+		<span id="footerSeperator">|</span>
+
+		<a id="twitterButton" href="#" onclick="window.open('https://twitter.com/FP_Show', '_system');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  
 		<span id="footerSeperator">|</span>
 		<a id="registerButton" href="#page_r"> Register</a> 
 		<span id="footerSeperator">|</span>
-		<a id="SiteButton" target="_blank" href="http://www.financeprofessionalshow.co.uk/"> Full Site</a> 
-	</div>
-</div>
+		<a id="SiteButton"  href="#" onclick="window.open('http://www.financeprofessionalshow.co.uk/', '_system');"> Full Site</a>
+	</div></div>
 
 
 

@@ -66,18 +66,31 @@ function add_description(x){
 			 var url2 = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=exhibitorslistdesc&format=json&exid='+x;
 		 
 		 $.getJSON(url2,function(json){
-		 var y='<div class="text_content" data-role="page" style="background:white" id="'+ x + '">'+
-			     '<img src="images/logo.jpg" style="width:96%" alt="logo">';
-			y=y+'<div class="title_bg"><div class="title">'+ json[0].post_title + '</div></div><br><br>';
+		 var y='<div  data-role="page" style="background:white" id="'+ x + '"><div data-role="header" style="background:white;border:0"><h1 > </h1></div>'+
+			     '<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>';
+			y=y+'<div class="text_content" style="padding-bottom:9%;text-align:center">';
+
+			
 		 for (var i = 0; i < json.length; i++) { 
-		 		if(json[i].meta_key=='_wp_attached_file'){y=y+'<p><img src="'+ json[i].guid + '"></p>';}
-				if(json[i].meta_key=='estandno'){y=y+'<p><strong>Stand Number</strong> :'+ json[i].meta_value + '</p>';}
-				if(json[i].meta_key=='econtactn'){y=y+'<p><strong>Contact Name</strong> :'+ json[i].meta_value + '</p>';}
-				if(json[i].meta_key=='ephone'){y=y+'<p><strong>Telephone</strong> :'+ json[i].meta_value + '</p>';}
-				if(json[i].meta_key=='eemail'){y=y+'<p><strong>Email</strong> :'+ json[i].meta_value + '</p>';}
-				if(json[i].meta_key=='ewebsite'){y=y+'<p><strong>Website</strong> :'+ json[i].meta_value + '</p>';}
-				}
-			y=y+'</div>';  
+		 		if(json[i].meta_key=='_wp_attached_file'){var img=i;}
+		 		if(json[i].meta_key=='estandno'){var stand=i;}
+		 		if(json[i].meta_key=='econtactn'){var contact=i;}
+		 		if(json[i].meta_key=='ephone'){var phone=i;}
+		 		if(json[i].meta_key=='eemail'){var email=i;}
+		 		if(json[i].meta_key=='ewebsite'){var web=i;}
+		 		}
+		 		y=y+'<img src="'+ json[img].guid + '">';
+		 		y=y+'<div class="title_bg" style="height:auto"><div class="title">'+ json[0].post_title + '</div></div>';
+				y=y+'<p style="text-align:center"><strong>Stand Number</strong>:'+ json[stand].meta_value + '</p>';
+				y=y+'<p style="text-align:center"><strong>Contact Name</strong>:'+ json[contact].meta_value + '</p>';
+				y=y+'<p style="text-align:center"><strong>Telephone</strong>:'+ json[phone].meta_value + '</p>';
+				y=y+'<p style="text-align:center"><strong>Email</strong>:<a  href="mailto:'+json[email].meta_value+'">'+ json[email].meta_value + '</a></p>';
+				y=y+'<p style="text-align:center"><strong>Web</strong>:<a  href="#" onclick="window.open(\''+json[web].meta_value+'\', \'_system\');">'+ json[web].meta_value + '</a></p>';
+				
+			y=y+'</div>';
+					y=y+'<div class="footer"><a id="backButton"  href="#page_el"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'</div>';
+ 
 			  $('body').append(y);
 			  $.mobile.changePage('#'+x);
 		 });
@@ -159,16 +172,19 @@ function prdescription(x){
 			 var url2 = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=select&format=json&table=wp_posts&columns=id,post_title,post_content,post_date&condition=post_type=%27post%27%20and%20post_status=%27publish%27%20and%20id='+x;
 		 
 		 $.getJSON(url2,function(json){
-		 var y='<div class="text_content" data-role="page" style="background:white;width:96%" id="'+ x + '">'+
-			     '<img src="images/logo.jpg" style="width:96%" alt="logo">';
+		 var y='<div  data-role="page" style="background:white;width:100%" id="'+ x + '"><div data-role="header" style="background:white;border:0"><h1 > </h1></div>'+
+			     '<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>';
+			y=y+'<div class="text_content" style="padding-bottom:9%">';
 			y=y+'<h2>'+ json[0].post_title + '</h2>';
+			
 			y=y+"<p style='color: #606060;font-size: 3vw;'>"+showDate(json[0].post_date)+"</p>";
 			result = "<p>" + json[0].post_content+ "</p>";
 			result = result.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
 			result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
 			y=y+result ;
-
-					y=y+'</div>';  
+			y=y+'</div>';
+					y=y+'<div class="footer"><a id="backButton"  href="#page_pr"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'</div>';
 			  $('body').append(y);
 			  $.mobile.changePage('#'+x);
 		 });
@@ -257,15 +273,20 @@ function updescription(x){
 			 var url2 = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=select&format=json&table=wp_posts&columns=id,post_title,post_content,post_date&condition=post_type=%27post%27%20and%20post_status=%27publish%27%20and%20id='+x;
 		 
 		 $.getJSON(url2,function(json){
-		 var y='<div class="text_content" data-role="page" style="background:white;width:96%" id="'+ x + '">'+
-			     '<img src="images/logo.jpg" style="width:96%" alt="logo">';
+		 var y='<divdata-role="page" style="background:white;width:100%" id="'+ x + '"><div data-role="header" style="background:white;border:0"><h1 > </h1></div>'+
+			     '<a href="#page1" >	<img src="images/logo.jpg" style="width:96%" alt="logo"></a>';
+						y=y+'<div class="text_content" style="padding-bottom:9%">';
+
 			y=y+'<h2>'+ json[0].post_title + '</h2>';
 			result = "<p>" + json[0].post_content+ "</p>";
 			result = result.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
 			result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
 			y=y+result ;
 
-					y=y+'</div>';  
+				y=y+'</div>';
+					y=y+'<div class="footer"><a id="backButton"  href="#page_update"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'</div>';
+  
 			  $('body').append(y);
 			  $.mobile.changePage('#'+x);
 		 });	
@@ -295,25 +316,16 @@ var url = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=s
 			
 			
 			function addvalue() {
-var name = $("#name").val();
-var email = $("#email").val();
-var company = $("#company").val();
-var telephone = $("#telephone").val();
-var address = $("#address").val();
+				
 				var url = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=insert&format=json&table=visitor_form&columns=name,email,company,phone,address&values="'+$('#name').val()+'","'+$('#email').val()+'","'+$('#company').val()+'","'+$('#telephone').val()+'","'+$('#address').val()+'"';
 
-if (name =='' || telephone =='' || company=='' || address=='' || email=='')
-{
-	alert("Please fill in the required information");
-} else
-{
 			
     $.getJSON(url);
 	
-	alert("Registered successfully");
+	alert("Thanks for registering - see you at the Show on Nov 5th!");
 	clearform();
 	$.mobile.navigate('#page1');
-}
+
 }
 
 
