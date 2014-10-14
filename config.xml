@@ -59,7 +59,7 @@
     <gap:splash src="img/splash/ios/splash1536x2008.png" gap:platform="ios" width="1536" height="2008" /> <!-- iPad retina -->
    
    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-	<string>114</string>
+	<string>115</string>
 	</gap:config-file>
         
     <access origin="*" />
