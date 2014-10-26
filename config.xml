@@ -28,6 +28,8 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.InAppBrowser" />
+    <gap:plugin name="InAppBrowser" value="CDVInAppBrowser" />
 	<icon src="icon.png" /> <!-- default 512 pixels -->
         
     <icon src="img/icons/ios/icon57.png" gap:platform="ios" width="57" height="57" /> <!-- iPhone & iPod Touch non retina iOS6 -->
