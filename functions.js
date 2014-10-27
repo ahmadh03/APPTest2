@@ -88,7 +88,7 @@ function add_description(x){
 				y=y+'<p style="text-align:center"><strong>Web</strong>:<a  href="#" onclick="window.open(\''+json[web].meta_value+'\', \'_system\');">'+ json[web].meta_value + '</a></p>';
 				
 			y=y+'</div>';
-					y=y+'<div class="footer"><a id="backButton"  href="#page_el"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'<div class="footer"><a id="backButton"  href="#page_el"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#fullSite"> Full Site</a> </div>';  
 					y=y+'</div>';
  
 			  $('body').append(y);
@@ -118,23 +118,27 @@ function addpage(x){
 $('#page_el').bind(el_get());
 
 
-/*function cp_get(){
+function cp_get(){
 var url = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=select&format=json&table=wp_posts&columns=id,post_title,post_content&condition=post_type=%27page%27%20and%20post_name=%27conference-programme%27%20and%20post_status=%27publish%27&limit=1'
 
 			
     $.getJSON(url,
     function (json) {
+    var result='';
         var tr;
         for (var i = 0; i < json.length; i++) {
-		
-		$('#cp_content').append(json[i].post_content);
+			result = "<p>" + json[i].post_content+ "</p>";
+			result = result.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
+			result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
+			
+		$('#cp_content').append(result);
        
         }
     });
 			}
 			
 		$('#page_cp').bind(cp_get());
-*/
+
 	function cu_get(){
 var url = 'http://www.financeprofessionalshow.co.uk/wp-content/ws-db1.php?type=select&format=json&table=wp_posts&columns=id,post_title,post_content&condition=post_type=%27page%27%20and%20post_name=%27contact-us-app%27%20and%20post_status=%27private%27&limit=1'
 
@@ -183,7 +187,7 @@ function prdescription(x){
 			result = result.replace(/\r\n/g, "<br />").replace(/\n/g, "<br />");
 			y=y+result ;
 			y=y+'</div>';
-					y=y+'<div class="footer"><a id="backButton"  href="#page_pr"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'<div class="footer"><a id="backButton"  href="#page_pr"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#fullSite"> Full Site</a> </div>';  
 					y=y+'</div>';
 			  $('body').append(y);
 			  $.mobile.changePage('#'+x);
@@ -284,7 +288,7 @@ function updescription(x){
 			y=y+result ;
 
 				y=y+'</div>';
-					y=y+'<div class="footer"><a id="backButton"  href="#page_update"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#" onclick="window.open(\'http://www.financeprofessionalshow.co.uk\', \'_system\');"> Full Site</a> </div>';  
+					y=y+'<div class="footer"><a id="backButton"  href="#page_update"><img src="images/back.png" style="width:5vw;float:left;padding-right:2%"> Back</a> <span id="footerSeperator">|</span><a id="twitterButton" href="#" onclick="window.open(\'https://twitter.com/FP_Show\', \'_system\');"><img src="images/twitter.png" style="width:5vw;float:left;padding-right:0%"> Twitter</a>  <span id="footerSeperator">|</span><a id="registerButton" href="#page_r"> Register</a> <span id="footerSeperator">|</span><a id="SiteButton"  href="#fullSite"> Full Site</a> </div>';  
 					y=y+'</div>';
   
 			  $('body').append(y);
